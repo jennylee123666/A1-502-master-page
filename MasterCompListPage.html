@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!----↓ for navbar--->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet" integrity="sha384-
+1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!----↑ for navbar--->
+  <title>Master Comp List Page</title>
+  <link href="Content/bootstrap.css" rel="stylesheet" />
+ 
+  <script src="Scripts/jquery-1.11.0.min.js"></script>
+  <script src="Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+
+<! ------------------javaScript--------------------->
+  <script>
+
+    var laterID = 1;
+
+    var currentID = 0;
+
+    function showProduct(ctl) {
+      var row = $(ctl).parents("tr");
+      var cols = row.children("td");
+
+      currentID = $($(cols[0]).children("button")[0]).data("id");
+      $("#productname").val($(cols[1]).text());
+      $("#description").val($(cols[2]).text());
+      $("#price").val($(cols[3]).text());
+
+      
+      $("#updateButton").text("Update");
+    }
+
+    function updateProduct() {
+      if ($("#updateButton").text() == "Update") {
+        tableUpdate(currentID);
+      }
+      else {
+        addProductToTable();
+      }
+      
+      clearForm();
+
+      $("#productname").focus();
+    }
+
+    function addProductToTable() {
+      if ($("#productTable tbody").length == 0) {
+        $("#productTable").append("<tbody></tbody>");
+      }
+
+      $("#productTable tbody").append(
+        tableBuiltWithProduct(laterID));
+
+      laterID += 1;
+    }
+
+    function tableUpdate(id) {
+      var row = $("#productTable button[data-id='" + id + "']")
+                .parents("tr")[0];
+
+      $(row).after(tableBuiltWithProduct(id));
+      $(row).remove();
+
+      clearForm();
+
+      $("#updateButton").text("Add");
+    }
+
+    function tableBuiltWithProduct(id) {
+      var ret =
+      "<tr>" +
+        "<td>" +
+          "<button type='button' " +
+                  "onclick='showProduct(this);' " +
+                  "class='btn btn-default' " +
+                  "data-id='" + id + "'>" +
+                  "<span class='glyphicon glyphicon-edit' />" +
+          "</button>" +
+        "</td>" +
+        "<td>" + $("#productname").val() + "</td>" +
+        "<td>" + $("#description").val() + "</td>" +
+        "<td>" + $("#price").val() + "</td>" +
+        "<td>" +
+          "<button type='button' " +
+                  "onclick='productDelete(this);' " +
+                  "class='btn btn-default' " +
+                  "data-id='" + id + "'>" +
+                  "<span class='glyphicon glyphicon-remove' />" +
+          "</button>" +
+        "</td>" +
+      "</tr>"
+      return ret;
+    }
+
+    function productDelete(ctl) {
+      $(ctl).parents("tr").remove();
+    }
+
+    function clearForm() {
+      $("#productname").val("");
+      $("#description").val("");
+      $("#price").val("");
+    }
+  </script>
+
+
+ <!-- navbar-->
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+        
+      
+  <div class="collapse navbar-collapse" id="expandme">
+      <div class="navbar-nav">
+          <a href="HomePage.html"><button class="btn btn-dark">Home</button></a>
+          <a href="MasterCompListPage.html"><button class="btn btn-dark">Master Computer List</button></a>
+      </div>
+  </div>
+</nav>
+
+<! ------------Design----------------->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2 align="center">ADD, Edit or Delete Products</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <table id="productTable" 
+               class="table table-bordered table-condensed table-striped" align="center">
+          <thead>
+            <tr>
+              <th>Edit</th>
+              <th>Product Name</th>
+              <th>Introduction Date</th>
+              <th>price</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            Product Information
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="productname">
+                Product Name
+              </label>
+              <input type="text"
+                     class="form-control"
+                     value="Laptop"
+                     id="productname" />
+            </div>
+            <div class="form-group">
+              <label for="description">
+                Description
+              </label>
+              <input type="text"
+                     class="form-control"
+                     value="Company of laptop is Dell"
+                     id="description" />
+            </div>
+            <div class="form-group">
+              <label for="price">
+                Price
+              </label>
+              <input type="text"
+                     class="form-control"
+                     value="$500 AUD"
+                     id="price" />
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-xs-12">
+                <button type="button" id="updateButton"
+                        class="btn btn-primary"
+                        onclick="updateProduct();">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

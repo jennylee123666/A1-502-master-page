@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>rentalpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+* {box-sizing: border-box;}
+
+body {
+  
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+td{
+  padding:10px;
+}
+
+</style>
+   
+</head>
+<body>
+    <!--upper part or header-->
+    <div class="topnav">
+      <a href="HomePage.html"><button class="btn btn-dark">Home</button></a>
+      <a href="MasterCompListPage.html"><button class="btn btn-dark">Master Computer List</button></a>
+  
+      <a href="rentalpage.html"><button class="btn btn-dark">Rental Page</button></a>
+      <a href="a1registration.html"><button class="btn btn-dark">Registration</button></a>
+        
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search Available Brand" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+      
+    <h1 style="text-align:center">Welcome to Rental Page</h1>
+
+    <!--middle /body -->
+    <h3>List of Computers</h3>
+    
+      
+    
+
+     <div>
+         <table style="width:50%">
+             <tr>
+                 <td>First computer</td>
+                <td><button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal" >View details</button></td>
+                <td><button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#demo" >Availability</button>
+                </td>
+
+             </tr>
+             <tr>
+                <td>Second computer</td>
+                <td><button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal1" >View details</button></td>
+                <td><button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#demo1" >Availability</button></td>
+            </tr>
+            <tr>
+                <td>Third computer</td>
+                <td><button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal2" >View details</button></td>
+                <td><button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#demo2" >Availability</button></td>
+            </tr>
+            <tr>
+                <td>Fourth computer</td>
+                <td><button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal3" >View details</button></td>
+                <td><button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#demo3" >Availability</button></td>
+            </tr>
+            <tr>
+                <td>Fifth computer</td>
+                <td><button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal4">View details</button></td>
+                <td><button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#demo4">Availability</button></td>
+            </tr>
+         </table>
+     </div>
+  <!--coding for modal/ button-->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4>First Computer Details</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+ 
+     <div class="modal-body">
+       <h6>Device name</h6>
+       <p>Laptop-abcdef</p>
+       <h6>Processor</h6>
+       <p>Intel(R) core (tm) i5-10210U CPU @1.60GHZ 2.11GHz</p>
+       <h6>Installed RAM</h6>
+       <p>8.00 GB (7.84GB usable)</p>
+       <h6>Device ID</h6>
+       <h6>Product ID</h6>
+       <h6>System Type</h6>
+       <h6>Pen and touch</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal" id="myModal1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4>Second Computer Details</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+ 
+     <div class="modal-body">
+       <h6>Device name</h6>
+       <p>Laptop-abcdef</p>
+       <h6>Processor</h6>
+       <p>Intel(R) core (tm) i5-10210U CPU @1.60GHZ 2.11GHz</p>
+       <h6>Installed RAM</h6>
+       <p>8.00 GB (7.84GB usable)</p>
+       <h6>Device ID</h6>
+       <h6>Product ID</h6>
+       <h6>System Type</h6>
+       <h6>Pen and touch</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="myModal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4>Third Computer Details</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+ 
+     <div class="modal-body">
+       <h6>Device name</h6>
+       <p>Laptop-abcdef</p>
+       <h6>Processor</h6>
+       <p>Intel(R) core (tm) i5-10210U CPU @1.60GHZ 2.11GHz</p>
+       <h6>Installed RAM</h6>
+       <p>8.00 GB (7.84GB usable)</p>
+       <h6>Device ID</h6>
+       <h6>Product ID</h6>
+       <h6>System Type</h6>
+       <h6>Pen and touch</h6>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="myModal3">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4>Fourth Computer Details</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+ 
+     <div class="modal-body">
+       <h6>Device name</h6>
+       <p>Laptop-abcdef</p>
+       <h6>Processor</h6>
+       <p>Intel(R) core (tm) i5-10210U CPU @1.60GHZ 2.11GHz</p>
+       <h6>Installed RAM</h6>
+       <p>8.00 GB (7.84GB usable)</p>
+       <h6>Device ID</h6>
+       <h6>Product ID</h6>
+       <h6>System Type</h6>
+       <h6>Pen and touch</h6>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="myModal4">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4>Fifth Computer Details</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+ 
+     <div class="modal-body">
+       <h6>Device name</h6>
+       <p>Laptop-abcdef</p>
+       <h6>Processor</h6>
+       <p>Intel(R) core (tm) i5-10210U CPU @1.60GHZ 2.11GHz</p>
+       <h6>Installed RAM</h6>
+       <p>8.00 GB (7.84GB usable)</p>
+       <h6>Device ID</h6>
+       <h6>Product ID</h6>
+       <h6>System Type</h6>
+       <h6>Pen and touch</h6>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="demo">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4>check availability</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+ 
+     <div class="modal-body">
+       <h6>Yes,it is available</h6>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="demo1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4>check availability</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+ 
+     <div class="modal-body">
+       <h6>Yes,it is available</h6>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="demo2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4>check availability</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+ 
+     <div class="modal-body">
+       <h6>Yes,it is available</h6>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="demo3">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4>check availability</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+ 
+     <div class="modal-body">
+       <h6>Yes,it is available</h6>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="demo4">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4>check availability</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+ 
+     <div class="modal-body">
+       <h6>Yes,it is available</h6>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<!--coding end here-->
+
+</body>
+</html>
